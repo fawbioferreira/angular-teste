@@ -8,11 +8,11 @@
             <div class="wrapper__header--item txt-center">Detalhe</div>
         </div>
         <div class="wrapper__line" *ngFor="let sale of sales">
-            <div class="wrapper__header--item">000</div>
-            <div class="wrapper__header--item">10/10/2021</div>
-            <div class="wrapper__header--item">Lorem Ipsum</div>
-            <div class="wrapper__header--item">R$0,00</div>
-            <div class="wrapper__header--item"><button class="btn__detail" routerLink="/sales/details">ver</button></div>
+            <div class="wrapper__header--item">{{sale.cod}}</div>
+            <div class="wrapper__header--item">{{sale.date}}</div>
+            <div class="wrapper__header--item">{{sale.clientName}}</div>
+            <div class="wrapper__header--item">{{sale.total}}</div>
+            <div class="wrapper__header--item"><button class="btn__detail" (click)="sendSale(sale)">ver</button></div>
         </div>
     </div>
 </div>

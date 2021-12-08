@@ -42,6 +42,20 @@ export class ClientsService {
         }
       )
     });
+  }  
+
+
+  getOneByCod(id:string){
+    return new Promise((resolve, reject) => {
+      this.angularFirestore.collection("clients-collection").doc(id).valueChanges().subscribe(
+        (data:any) => {
+          resolve(data);
+        },
+        error => {
+          reject(error);
+        }
+      )
+    });
   }
 
   viacep(cep:string){

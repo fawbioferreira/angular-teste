@@ -14,6 +14,7 @@ export class ClientsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getClients();
+    this.getClient();
   }
 
   getClients(){
@@ -24,6 +25,12 @@ export class ClientsComponent implements OnInit {
         } as Client;
       });
     });
+  }
+
+  getClient(){
+    this.clientsService.getOneByCod("6").then((res:any) => {
+      console.log(res);
+    })
   }
 
 }
