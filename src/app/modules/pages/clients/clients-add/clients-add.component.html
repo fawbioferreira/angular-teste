@@ -1,53 +1,53 @@
 <div class="container">
     <button class="btn__back" routerLink="/clients/list">voltar</button>
     <div class="wrapper">
-        <form action="" class="form">
+        <form [formGroup]="clientForm" class="form">
             <div class="coluna-1">
                 <label class="form__label d-block">Código</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="cod">
             </div>
             <div class="coluna-8">
                 <label class="form__label d-block">Nome</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="name">
             </div>
             <div class="coluna-3">
                 <label class="form__label d-block">CPF</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="cpf" mask="000.000.000-00">
             </div>
             <div class="coluna-2">
                 <label class="form__label d-block">CEP</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="cep" mask="00000-000" (input)="searchCep($event)">
             </div>
             <div class="coluna-9">
                 <label class="form__label d-block">Logradouro</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="address">
             </div>
             <div class="coluna-1">
                 <label class="form__label d-block">Nº</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="number">
             </div>
             <div class="coluna-4">
                 <label class="form__label d-block">Bairro</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="district">
             </div>
             <div class="coluna-4">
                 <label class="form__label d-block">Complemento</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="complement">
             </div>
             <div class="coluna-4">
                 <label class="form__label d-block">Cidade</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="city">
             </div>
             <div class="coluna-4">
                 <label class="form__label d-block">Email</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="email">
             </div>
             <div class="coluna-2">
                 <label class="form__label d-block">Data de nascimento</label>
-                <input type="date" class="form__field">
+                <input type="date" class="form__field" formControlName="birthdayDate">
             </div>
         </form>
 
-        <button class="btn__save">Salvar</button>
+        <button class="btn__save" (click)="submitForm()">Salvar</button>
     </div>
 </div>

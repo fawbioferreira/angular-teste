@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from './shared/client.model';
+import { ClientsService } from './shared/clients.service';
 
 @Component({
   selector: 'app-clients',
@@ -6,11 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clients.component.scss']
 })
 export class ClientsComponent implements OnInit {
-  clients = [{},{},{},{},{},{},{},{},]
+  clients: Client[] = [];
 
-  constructor() { }
+  constructor(private clientsService: ClientsService) { }
 
   ngOnInit(): void {
+    this.getClients();
+  }
+
+  getClients(){
+    this.clientsService.getAll().then((res:any) => {
+      this.clients = res.map((e:any) => {
+        return {
+          ...e.payload.doc.data() as {}
+        } as Client;
+      });
+    });
   }
 
 }
