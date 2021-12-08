@@ -1,0 +1,17 @@
+@import '../../../../assets/scss/main';
+.container{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.btn__save{
+    width: 100%;
+    margin-top: 2rem;
+}

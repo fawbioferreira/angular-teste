@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="wrapper">
+        <div class="wrapper__header">
+            <div class="wrapper__header--item">Cód</div>
+            <div class="wrapper__header--item">Data/Hora</div>
+            <div class="wrapper__header--item">Cliente</div>
+            <div class="wrapper__header--item">Total</div>
+            <div class="wrapper__header--item txt-center">Detalhe</div>
+        </div>
+        <div class="wrapper__line" *ngFor="let sale of sales">
+            <div class="wrapper__header--item">000</div>
+            <div class="wrapper__header--item">10/10/2021</div>
+            <div class="wrapper__header--item">Lorem Ipsum</div>
+            <div class="wrapper__header--item">R$0,00</div>
+            <div class="wrapper__header--item"><button class="btn__detail" routerLink="/sales/details">ver</button></div>
+        </div>
+    </div>
+</div>
+

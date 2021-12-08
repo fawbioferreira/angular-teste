@@ -1,0 +1,27 @@
+<div class="container">
+    <button  class="btn__back" routerLink="/sales/list">voltar</button>
+    <div class="wrapper">
+        <div class="detail__header">
+            <div class="detail__header--name">Cliente</div>
+            <div class="detail__header--box">
+                <div class="detail__header--cod">#000</div>
+                <div class="detail__header--date">06/12/2021 - 10:00</div>
+            </div>
+        </div>
+
+        <div class="detail__content--header">
+            <div class="detail__content--item custom">#</div>
+            <div class="detail__content--item custom">Produto</div>
+            <div class="detail__content--item custom">Valor</div>
+        </div>
+        <div class="detail__content" *ngFor="let item of itens">
+            <div class="detail__content--item">1</div>
+            <div class="detail__content--item">Lorem ipsum</div>
+            <div class="detail__content--item">R$0,00</div>
+        </div>
+        <div class="detail__total">
+           <h6>Total</h6> R$0,00
+        </div>
+    </div>
+
+</div>

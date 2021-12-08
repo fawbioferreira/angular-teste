@@ -1,0 +1,9 @@
+@import '../../../../assets/scss/main';
+
+.wrapper{
+    &__header, &__line{
+        //quantidade e largura dos items
+        grid-template-columns: 10rem 1fr 7rem;
+
+    }
+}
