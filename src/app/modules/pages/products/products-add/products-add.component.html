@@ -1,21 +1,21 @@
 <div class="container">
     <button class="btn__back" routerLink="/products/list">voltar</button>
     <div class="wrapper">
-        <form action="" class="form">
+        <form [formGroup]="productForm" class="form">
             <div class="coluna-1">
                 <label class="form__label d-block">Código</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="cod">
             </div>
             <div class="coluna-8">
                 <label class="form__label d-block">Nome</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" formControlName="name">
             </div>
             <div class="coluna-3">
                 <label class="form__label d-block">Valor unitário</label>
-                <input type="text" class="form__field">
+                <input type="text" class="form__field" currencyMask formControlName="value">
             </div>
         </form>
 
-        <button class="btn__save">Salvar</button>
+        <button class="btn__save" (click)="submitForm()">Salvar</button>
     </div>
 </div>

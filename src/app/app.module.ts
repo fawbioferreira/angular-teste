@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,9 +22,30 @@ import { ClientsService } from './modules/pages/clients/shared/clients.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CnpjOuCpfPipe } from './_helpers/cnpjOuCpf.pipe';
 import { CepPipe } from './_helpers/cep.pipe';
+import { CurrencyMaskConfig, CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
+
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(ptBr);
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
+};
+
+const customCurrencyMaskConfig : CurrencyMaskConfig = {
+  align: "right",
+  allowNegative: false,
+  allowZero: true,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: ".",
+  nullable: true,
+  min: 0,
+  max: 9999999999999999,
+  inputMode: CurrencyMaskInputMode.FINANCIAL
 };
 
 @NgModule({
@@ -51,8 +72,12 @@ const maskConfig: Partial<IConfig> = {
     ReactiveFormsModule,
     NgxMaskModule.forRoot(maskConfig),
     HttpClientModule,
+    NgxCurrencyModule.forRoot(customCurrencyMaskConfig)
   ],
-  providers: [ClientsService],
+  providers: [
+    ClientsService,
+    { provide: LOCALE_ID, useValue: 'pt' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
