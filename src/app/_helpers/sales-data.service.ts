@@ -7,6 +7,7 @@ import { Sales } from '../modules/pages/sales/shared/sales.model';
 })
 export class SalesDataService {
 
+  //salva o pedido selecionado para ser exibido no component de detalhes
   private selectedSaleSubject: BehaviorSubject<any>;
 
   constructor() {

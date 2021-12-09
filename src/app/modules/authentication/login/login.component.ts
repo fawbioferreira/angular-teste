@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
           }
         },
         error => {
-  
+          console.log("erro login", error)
         }
       );
 

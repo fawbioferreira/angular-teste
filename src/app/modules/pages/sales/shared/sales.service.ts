@@ -21,4 +21,17 @@ export class SalesService {
       )
     });
   }
+
+  getOneById(cod:string){
+    return new Promise((resolve, reject) => {
+      this.angularFirestore.collection("products-collection").doc(cod).valueChanges().subscribe(
+        (data:any) => {
+          resolve(data);
+        },
+        error => {
+          reject(error);
+        }
+      )
+    });
+  }
 }

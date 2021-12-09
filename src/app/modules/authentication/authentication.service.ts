@@ -22,7 +22,8 @@ export class AuthenticationService {
   }
   
 
-  login(email: string, password: string){    
+  login(email: string, password: string){  
+    //busca sempre o mesmo usuário e só compara a senha pra ver se está correto  
     return new Promise((resolve, reject) => {
       this.angularFirestore.collection("users-collection").doc("lNHub1TH6dJbmLWcApMw").valueChanges().subscribe(
         (data:any) => {

@@ -7,5 +7,13 @@ export const environment = {
     authDomain: 'wkproject-5f398.firebaseapp.com',
     messagingSenderId: '36584626319',
   },
-  production: true
+  production: true,
+  firebaseConfig : {
+    apiKey: "AIzaSyDYV9cIUOIBpRx7iCneweonO5C7GS18he8",
+    authDomain: "wkproject-5f398.firebaseapp.com",
+    projectId: "wkproject-5f398",
+    storageBucket: "wkproject-5f398.appspot.com",
+    messagingSenderId: "36584626319",
+    appId: "1:36584626319:web:d16c1dfa4fecc1871e38fa"
+  }
 };
