@@ -35,7 +35,6 @@ export class ClientsService {
       this.angularFirestore.collection("clients-collection").snapshotChanges().subscribe(
         data => {
           resolve(data);
-          console.log("cirado")
         },
         error => {
           reject(error);

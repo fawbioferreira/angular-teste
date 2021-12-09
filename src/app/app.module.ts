@@ -26,6 +26,7 @@ import { CurrencyMaskConfig, CurrencyMaskInputMode, NgxCurrencyModule } from 'ng
 
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { AuthenticationService } from './modules/authentication/authentication.service';
 
 registerLocaleData(ptBr);
 
@@ -76,6 +77,7 @@ const customCurrencyMaskConfig : CurrencyMaskConfig = {
   ],
   providers: [
     ClientsService,
+    AuthenticationService,
     { provide: LOCALE_ID, useValue: 'pt' }
   ],
   bootstrap: [AppComponent]

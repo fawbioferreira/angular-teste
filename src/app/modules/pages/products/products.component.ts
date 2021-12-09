@@ -23,7 +23,6 @@ export class ProductsComponent implements OnInit {
           ...e.payload.doc.data() as {}
         } as Product;
       });
-      console.log(this.products)
     });
   }
 

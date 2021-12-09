@@ -26,7 +26,6 @@ export class ProductsService {
       this.angularFirestore.collection("products-collection").snapshotChanges().subscribe(
         data => {
           resolve(data);
-          console.log("cirado")
         },
         error => {
           reject(error);

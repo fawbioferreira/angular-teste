@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/modules/authentication/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  user: any = "";
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.getUserEmail();
+  }
+
+  getUserEmail(){
+    this.authService.currentUser.subscribe(
+      data => {
+        this.user = this.authService.currentUserValue;
+      }
+    )
+    
   }
 
 }

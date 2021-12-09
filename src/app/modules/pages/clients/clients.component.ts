@@ -29,7 +29,6 @@ export class ClientsComponent implements OnInit {
 
   getClient(){
     this.clientsService.getOneByCod("6").then((res:any) => {
-      console.log(res);
     })
   }
 

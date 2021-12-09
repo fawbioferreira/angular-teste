@@ -23,7 +23,6 @@ export class SalesDetailsComponent implements OnInit {
 
   getSelectedSale(){
     this.sale = this.salesDataService.selectedSaleValue;
-    console.log("sale",this.sale)
   }
   
 
