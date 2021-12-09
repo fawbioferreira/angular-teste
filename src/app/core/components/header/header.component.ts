@@ -20,8 +20,7 @@ export class HeaderComponent implements OnInit {
       data => {
         this.user = this.authService.currentUserValue;
       }
-    )
-    
+    );    
   }
 
 }
