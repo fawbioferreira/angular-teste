@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="user.email">
     <img src="./assets/imagens/avatar.png" alt="" class="avatar">
-    Olá, Fawbio!
+    Olá, {{user.email}}
 </header>

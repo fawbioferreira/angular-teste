@@ -7,11 +7,13 @@ import { ProductsAddComponent } from './modules/pages/products/products-add/prod
 import { SalesComponent } from './modules/pages/sales/sales.component';
 import { SalesDetailsComponent } from './modules/pages/sales/sales-details/sales-details.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
+import { AuthGuard } from './modules/authentication/authentication.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: ClientsComponent
+    component: ClientsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -19,20 +21,22 @@ const routes: Routes = [
   },
   {
     path: 'clients',
-    
+    canActivate: [AuthGuard],    
     children: [
       {
         path: '',
         redirectTo: 'list',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'list',
         component: ClientsComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'add',
         component: ClientsAddComponent,
+        canActivate: [AuthGuard]
       },
     ]
   },
@@ -47,10 +51,12 @@ const routes: Routes = [
       {
         path: 'list',
         component: ProductsComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'add',
         component: ProductsAddComponent,
+        canActivate: [AuthGuard]
       },
     ]
   },
@@ -65,10 +71,12 @@ const routes: Routes = [
       {
         path: 'list',
         component: SalesComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'details',
         component: SalesDetailsComponent,
+        canActivate: [AuthGuard]
       },
     ]
   },
