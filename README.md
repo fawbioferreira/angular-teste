@@ -9,8 +9,7 @@ Utilize o sistema rodando online no seguinte endereço: https://www.devinnovatio
 ## Instalação
 - Primeiro clone o repositório com o comando:
 
-    git clone https://github.com/fawbioferreira/angular-teste.git
-    `git clone https://github.com/fawbioferreira/angular-teste.git`
+        `git clone https://github.com/fawbioferreira/angular-teste.git`
 
 - Abra a pasta do raiz do projeto no terminal e execute o comando:
 `npm i`
